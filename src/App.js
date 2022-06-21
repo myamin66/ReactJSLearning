@@ -1,24 +1,22 @@
 import './App.css';
-import Form from './components/Form';
-import Example from './components/UseEffectExample';
-import {Routes,Route} from "react-router-dom"
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Navbar from './components/Navbar';
-
+import LoginForm from './components/LoginForm';
+import Signup from './components/Signup';
+import { Route, Routes, useRoutes } from 'react-router-dom';
+import { DataProvider } from './DataProvider';
+import Head1 from './components/Head1';
 function App() {
   return (
-    <div className="App">
-      {/* <Form/> */}
-      {/* <Example/> */}
-      <Navbar/>
+    <DataProvider>
+      {/* <LoginForm/>  */}
+      {/* <Example/>  */}
+      {/* <Navbar/> */}
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
+        {/* <Route path='/' element={<Home/>}/> */}
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/login' element={<LoginForm/>}/>
+        <Route path='/values' element={<Head1/>}/>
       </Routes>
-    </div>
+    </DataProvider>
   );
 }
 
